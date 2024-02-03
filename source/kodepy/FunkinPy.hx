@@ -154,7 +154,8 @@ class FunkinPy extends Python
     }
 
     public function set(variable:String, data:Dynamic) {
-        haxe.Log.trace('Python Code still Unimplemented...', null);
+        Python.runSimpleString('${variable} = ${data}');
+		haxe.Log.trace('Python Code still Unimplemented...', null);
     }
 
 }

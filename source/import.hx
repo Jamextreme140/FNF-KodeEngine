@@ -10,6 +10,14 @@ import llua.*;
 import llua.Lua;
 #end
 
+//Kode
+import haxe.ui.*;
+import haxe.ui.components.*;
+import haxe.ui.containers.*;
+import haxe.ui.containers.windows.*;
+import haxe.ui.core.*;
+import haxe.ui.events.*;
+
 #if ACHIEVEMENTS_ALLOWED
 import backend.Achievements;
 #end

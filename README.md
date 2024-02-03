@@ -1,5 +1,6 @@
-# Friday Night Funkin' - Psych Engine
-Engine originally used on [Mind Games Mod](https://gamebanana.com/mods/301107), intended to be a fix for the vanilla version's many issues while keeping the casual play aspect of it. Also aiming to be an easier alternative to newbie coders.
+# Friday Night Funkin' - Kode Engine
+This is a variant of Psych Engine aimed to be an easier alternative to newbie coders.
+Engine originally used on [Mind Games Mod](https://gamebanana.com/mods/301107), intended to be a fix for the vanilla version's many issues while keeping the casual play aspect of it.
 
 ## Installation:
 
@@ -7,15 +8,15 @@ Refer to [the Build Instructions](./BUILDING.md)
 
 ## Customization:
 
-if you wish to disable things like *Lua Scripts* or *Video Cutscenes*, you can read over to `Project.xml`
+if you wish to disable things like *Lua Scripts*, *Python Scripts* or *Video Cutscenes*, you can read over to `Project.xml`
 
 inside `Project.xml`, you will find several variables to customize Psych Engine to your liking
 
 to start you off, disabling Videos should be simple, simply Delete the line `"VIDEOS_ALLOWED"` or comment it out by wrapping the line in XML-like comments, like this `<!-- YOUR_LINE_HERE -->`
 
-same goes for *Lua Scripts*, comment out or delete the line with `LUA_ALLOWED`, this and other customization options are all available within the `Project.xml` file
+same goes for *Lua Scripts* and *Python Scripts*, comment out or delete the line with `LUA_ALLOWED` or `HXPY_ALLOWED`, this and other customization options are all available within the `Project.xml` file
 
-## Credits:
+## Credits(Psych Engine Dev team):
 * Shadow Mario - Programmer
 * Riveren - Artist
 
@@ -77,6 +78,9 @@ _____________________________________
   * Hurt Notes: If Boyfriend hits this note, he plays a miss animation and loses some health.
   * GF Sing: Rather than the character hitting the note and singing, Girlfriend sings instead.
   * No Animation: Character just hits the note, no animation plays.
+
+### Built-in Script Editor
+* You can now create or edit your Lua/HScript (and Python soon) scripts inside the chart editor and character editor.
 
 ## Multiple editors to assist you in making your own Mod
 ![Screenshot_3](https://user-images.githubusercontent.com/44785097/144629914-1fe55999-2f18-4cc1-bc70-afe616d74ae5.png)

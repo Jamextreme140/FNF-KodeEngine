@@ -1,5 +1,6 @@
 package states.editors;
 
+import substates.ScriptEditorSubstate;
 import flash.geom.Rectangle;
 import haxe.Json;
 import haxe.format.JsonParser;
@@ -546,6 +547,10 @@ class ChartingState extends MusicBeatState
 		player2DropDown.selectedLabel = _song.player2;
 		blockPressWhileScrolling.push(player2DropDown);
 
+		var scripteditor:FlxButton = new FlxButton(player1DropDown.x, player2DropDown.y + 100, "Script Editor", function() {
+			openScriptEditor();
+		});
+
 		#if MODS_ALLOWED
 		var directories:Array<String> = [Paths.mods('stages/'), Paths.mods(Mods.currentModDirectory + '/stages/'), Paths.getSharedPath('stages/')];
 		for(mod in Mods.getGlobalMods())
@@ -615,6 +620,7 @@ class ChartingState extends MusicBeatState
 		tab_group_song.add(gfVersionDropDown);
 		tab_group_song.add(player1DropDown);
 		tab_group_song.add(stageDropDown);
+		tab_group_song.add(scripteditor);
 
 		UI_box.addGroup(tab_group_song);
 
@@ -3236,6 +3242,8 @@ class ChartingState extends MusicBeatState
 		if(_song.notes[section] != null) val = _song.notes[section].sectionBeats;
 		return val != null ? val : 4;
 	}
+
+	function openScriptEditor() {openSubState(new ScriptEditorSubstate());}
 }
 
 class AttachedFlxText extends FlxText

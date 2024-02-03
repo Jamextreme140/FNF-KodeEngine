@@ -1,5 +1,6 @@
 package states.editors;
 
+import substates.ScriptEditorSubstate;
 import flixel.FlxObject;
 import flixel.graphics.FlxGraphic;
 
@@ -629,13 +630,18 @@ class CharacterEditorState extends MusicBeatState
 		});
 
 		var decideIconColor:FlxButton = new FlxButton(reloadImage.x, reloadImage.y + 30, "Get Icon Color", function()
-			{
-				var coolColor:FlxColor = FlxColor.fromInt(CoolUtil.dominantColor(healthIcon));
-				character.healthColorArray[0] = coolColor.red;
-				character.healthColorArray[1] = coolColor.green;
-				character.healthColorArray[2] = coolColor.blue;
-				updateHealthBar();
-			});
+		{
+			var coolColor:FlxColor = FlxColor.fromInt(CoolUtil.dominantColor(healthIcon));
+			character.healthColorArray[0] = coolColor.red;
+			character.healthColorArray[1] = coolColor.green;
+			character.healthColorArray[2] = coolColor.blue;
+			updateHealthBar();
+		});
+
+		var scripteditor:FlxButton = new FlxButton(decideIconColor.x, decideIconColor.y + 30, "Script Editor", function()
+		{
+			openScriptEditor();
+		});
 
 		healthIconInputText = new FlxUIInputText(15, imageInputText.y + 35, 75, healthIcon.getCharacter(), 8);
 
@@ -688,6 +694,7 @@ class CharacterEditorState extends MusicBeatState
 		tab_group.add(imageInputText);
 		tab_group.add(reloadImage);
 		tab_group.add(decideIconColor);
+		tab_group.add(scripteditor);
 		tab_group.add(healthIconInputText);
 		tab_group.add(vocalsInputText);
 		tab_group.add(singDurationStepper);
@@ -1289,4 +1296,6 @@ class CharacterEditorState extends MusicBeatState
 			_file.save(data, '$_char.json');
 		}
 	}
+
+	function openScriptEditor() {openSubState(new ScriptEditorSubstate());}
 }
