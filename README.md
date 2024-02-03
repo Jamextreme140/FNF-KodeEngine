@@ -79,7 +79,8 @@ _____________________________________
   * GF Sing: Rather than the character hitting the note and singing, Girlfriend sings instead.
   * No Animation: Character just hits the note, no animation plays.
 
-### Built-in Script Editor
+### Built-in Script Editor (WIP)
+![Captura de pantalla 2024-02-03 132007](https://github.com/Jamextreme140/FNF-KodeEngine/assets/79620403/c761bbb6-46fb-470d-8852-76ed65f6e000)
 * You can now create or edit your Lua/HScript (and Python soon) scripts inside the chart editor and character editor.
 
 ## Multiple editors to assist you in making your own Mod
